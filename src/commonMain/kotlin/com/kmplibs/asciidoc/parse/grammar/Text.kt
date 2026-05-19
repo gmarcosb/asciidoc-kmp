@@ -1,8 +1,8 @@
-package org.projectchip.alchemy.asciidoc.parse.grammar
+package com.kmplibs.asciidoc.parse.grammar
 
 import io.github.mirrgieriana.xarpeg.*
 import io.github.mirrgieriana.xarpeg.parsers.*
-import org.projectchip.alchemy.asciidoc.*
+import com.kmplibs.asciidoc.*
 
 val AnySpaces = (+Regex("[ \t]*")).value
 

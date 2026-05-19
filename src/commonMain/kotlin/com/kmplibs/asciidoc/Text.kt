@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc
+package com.kmplibs.asciidoc
 
 data class StringElement(var value: String) : Element {
     override fun type(): ElementType = ElementType.InlineLiteral

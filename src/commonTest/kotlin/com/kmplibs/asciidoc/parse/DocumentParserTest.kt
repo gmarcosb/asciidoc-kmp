@@ -1,8 +1,8 @@
-package org.projectchip.alchemy.asciidoc.parse
+package com.kmplibs.asciidoc.parse
 
 import io.github.mirrgieriana.xarpeg.*
-import org.projectchip.alchemy.asciidoc.*
-import org.projectchip.alchemy.asciidoc.parse.grammar.*
+import com.kmplibs.asciidoc.*
+import com.kmplibs.asciidoc.parse.grammar.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

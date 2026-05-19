@@ -1,6 +1,6 @@
-package org.projectchip.alchemy.asciidoc.render
+package com.kmplibs.asciidoc.render
 
-import org.projectchip.alchemy.asciidoc.*
+import com.kmplibs.asciidoc.*
 
 fun elements(cxt: Target, prefix: String, vararg elementList: Element) {
     for (e in elementList) {

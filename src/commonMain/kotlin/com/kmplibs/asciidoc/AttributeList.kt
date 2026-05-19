@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc
+package com.kmplibs.asciidoc
 
 class AttributeList : ElementList {
     val attributes: MutableList<Element> = mutableListOf()

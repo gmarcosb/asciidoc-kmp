@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc
+package com.kmplibs.asciidoc
 
 enum class ElementType {
     Unknown, Document, Block, Inline, InlineLiteral, Attribute, Attributes

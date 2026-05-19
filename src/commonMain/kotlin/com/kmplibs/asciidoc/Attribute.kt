@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc
+package com.kmplibs.asciidoc
 
 interface Attribute : Element
 

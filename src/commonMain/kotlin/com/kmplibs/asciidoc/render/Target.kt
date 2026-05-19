@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc.render
+package com.kmplibs.asciidoc.render
 
 interface Target {
     fun ensureNewLine()

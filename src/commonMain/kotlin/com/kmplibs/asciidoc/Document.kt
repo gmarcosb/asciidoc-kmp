@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc
+package com.kmplibs.asciidoc
 
 class Document : ParentElement {
     private var children: Elements = Elements()

@@ -1,7 +1,7 @@
-package org.projectchip.alchemy.asciidoc.parse
+package com.kmplibs.asciidoc.parse
 
 import io.github.mirrgieriana.xarpeg.DefaultParseContext
-import org.projectchip.alchemy.asciidoc.Document
+import com.kmplibs.asciidoc.Document
 
 class AsciidocParseContext(src: String, val document: Document = Document()) : DefaultParseContext(src) {
     // Allows maintaining parser state, like tracking indent level or delimters

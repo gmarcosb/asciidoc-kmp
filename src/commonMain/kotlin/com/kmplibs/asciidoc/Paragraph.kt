@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc
+package com.kmplibs.asciidoc
 
 enum class AdmonitionType {
     None, Note, Tip, Important, Caution, Warning;

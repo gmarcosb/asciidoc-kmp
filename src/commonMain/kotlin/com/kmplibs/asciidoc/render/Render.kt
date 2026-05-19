@@ -1,6 +1,6 @@
-package org.projectchip.alchemy.asciidoc.render
+package com.kmplibs.asciidoc.render
 
-import org.projectchip.alchemy.asciidoc.Document
+import com.kmplibs.asciidoc.Document
 
 class Renderer {
     fun process(doc: Document): String {

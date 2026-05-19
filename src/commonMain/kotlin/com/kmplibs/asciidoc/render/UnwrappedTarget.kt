@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc.render
+package com.kmplibs.asciidoc.render
 
 class UnwrappedTarget : Target {
     private val out = StringBuilder()

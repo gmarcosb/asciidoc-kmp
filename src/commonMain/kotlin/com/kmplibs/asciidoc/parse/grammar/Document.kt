@@ -1,9 +1,9 @@
-package org.projectchip.alchemy.asciidoc.parse.grammar
+package com.kmplibs.asciidoc.parse.grammar
 
 import io.github.mirrgieriana.xarpeg.*
 import io.github.mirrgieriana.xarpeg.parsers.*
-import org.projectchip.alchemy.asciidoc.*
-import org.projectchip.alchemy.asciidoc.parse.AsciidocParseContext
+import com.kmplibs.asciidoc.*
+import com.kmplibs.asciidoc.parse.AsciidocParseContext
 
 val DocumentParser: Parser<Document> = (BlockElements.oneOrMore * -EndOfFile).mapEx { ctx, (blocks) ->
     val doc = (ctx as? AsciidocParseContext)?.document ?: Document()

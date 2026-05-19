@@ -1,4 +1,4 @@
-package org.projectchip.alchemy.asciidoc
+package com.kmplibs.asciidoc
 
 data class Elements(val children: MutableList<Element> = mutableListOf()) {
     fun append(vararg e: Element) {
