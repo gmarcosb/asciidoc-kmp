@@ -1,12 +1,7 @@
-package com.kmplibs.asciidoc
+package org.projectchip.alchemy.asciidoc
 
 data class StringElement(var value: String) : Element {
     override fun type(): ElementType = ElementType.InlineLiteral
-
-    override fun equals(other: Any?): Boolean {
-        if (other !is StringElement) return false
-        return value == other.value
-    }
 
     override fun clone(): Element {
         return StringElement(value)
@@ -15,11 +10,6 @@ data class StringElement(var value: String) : Element {
 
 data class SpecialCharacter(val character: String) : Element {
     override fun type(): ElementType = ElementType.InlineLiteral
-
-    override fun equals(other: Any?): Boolean {
-        if (other !is SpecialCharacter) return false
-        return character == other.character
-    }
 
     override fun clone(): Element {
         return SpecialCharacter(character)
@@ -33,6 +23,8 @@ class LineContinuation : Element {
         return other is LineContinuation
     }
 
+    override fun hashCode() = this::class.hashCode()
+
     override fun clone(): Element {
         return LineContinuation()
     }
@@ -44,6 +36,8 @@ class LineBreak : Element {
     override fun equals(other: Any?): Boolean {
         return other is LineBreak
     }
+
+    override fun hashCode() = this::class.hashCode()
 
     override fun clone(): Element {
         return LineBreak()
@@ -57,6 +51,8 @@ class NewLine : Element {
         return other is NewLine
     }
 
+    override fun hashCode() = this::class.hashCode()
+
     override fun clone(): Element {
         return NewLine()
     }
@@ -64,11 +60,6 @@ class NewLine : Element {
 
 data class EmptyLine(val value: String = "") : Element {
     override fun type(): ElementType = ElementType.InlineLiteral
-
-    override fun equals(other: Any?): Boolean {
-        if (other !is EmptyLine) return false
-        return value == other.value
-    }
 
     override fun clone(): Element {
         return EmptyLine(value)

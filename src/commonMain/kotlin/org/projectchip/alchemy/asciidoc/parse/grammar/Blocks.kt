@@ -1,11 +1,14 @@
-package com.kmplibs.asciidoc.parse.grammar
+package org.projectchip.alchemy.asciidoc.parse.grammar
 
 import io.github.mirrgieriana.xarpeg.*
 import io.github.mirrgieriana.xarpeg.parsers.*
-import com.kmplibs.asciidoc.*
+import org.projectchip.alchemy.asciidoc.*
 
 val BlockEmptyLine = (AnySpaces * NewLineParser).map { (spaces, _) -> EmptyLine(spaces) }
 
+// Since (!BlockEmptyLine) is a NegativeLookAheadParser, which returns Unit,
+// Xarpeg might skip adding Unit to the Tuple. Thus, (!BlockEmptyLine * NewLineParser)
+// just returns NewLine, NOT a Tuple2!
 val safeNewLine = (!BlockEmptyLine * NewLineParser).map { newline -> newline as Element }
 
 val ParagraphElement: Parser<Element> = object {
