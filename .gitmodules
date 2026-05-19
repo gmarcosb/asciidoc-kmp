@@ -1,0 +1,3 @@
+[submodule "xarpeg"]
+	path = xarpeg
+	url = https://github.com/MirrgieRiana/xarpeg-kotlin-peg-parser.git
