@@ -1,3 +1,13 @@
-build
+*.iml
 .gradle
-xarpeg/
+.idea
+.DS_Store
+build
+captures
+.externalNativeBuild
+.cxx
+local.properties
+xcuserdata
+.kotlin
+#So we don't accidentally commit our private keys
+*.gpg
