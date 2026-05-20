@@ -12,7 +12,7 @@ val safeNewLine = (!BlockEmptyLine * NewLineParser).map { tuple ->
 }
 
 val ParagraphElement: Parser<Element> = object {
-    val root: Parser<Element> = NakedInlineText + Punctuation + SpecialCharacterParser + SingleSpace.map { StringElement(it) } + safeNewLine
+    val root: Parser<Element> = InlineMacroParser + NakedInlineText + Punctuation + SpecialCharacterParser + SingleSpace.map { StringElement(it) } + safeNewLine
 }.root
 
 val ParagraphElements = ParagraphElement.oneOrMore.map { Elements(it.toMutableList()) }
@@ -23,6 +23,6 @@ val ParagraphParser = (ParagraphElements * -EndOfLine.optional).map { tuple ->
     Paragraph(elements = els)
 }
 
-val NakedBlocks: Parser<Element> = BlockEmptyLine + SectionParser + UnorderedListItemParser + OrderedListItemParser + DelimitedBlockParser + ParagraphParser
+val NakedBlocks: Parser<Element> = BlockEmptyLine + TableParser + SectionParser + UnorderedListItemParser + OrderedListItemParser + DelimitedBlockParser + ParagraphParser
 
 val BlockElements: Parser<Element> = NakedBlocks
