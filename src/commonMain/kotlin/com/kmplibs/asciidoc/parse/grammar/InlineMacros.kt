@@ -12,4 +12,4 @@ val AttributeReferenceValue = (!Regex("\\\\").toParser() * (+Regex("\\{")).value
     AttributeReference(t.b)
 }
 
-val InlineMacroParser: Parser<Element> = AttributeReferenceValue.map { it as Element }
+val InlineMacroParser: Parser<Element> = AttributeReferenceValue.map { it as Element } + LinkParser.map { it as Element }
