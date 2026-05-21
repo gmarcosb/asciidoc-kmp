@@ -1,6 +1,8 @@
 package com.kmplibs.asciidoc
 
-data class Elements(val children: MutableList<Element> = mutableListOf()) {
+data class Elements(val children: MutableList<Element> = mutableListOf()) : Element {
+    override fun type(): ElementType = ElementType.Block
+
     fun append(vararg e: Element) {
         children.addAll(e)
     }
@@ -17,7 +19,7 @@ data class Elements(val children: MutableList<Element> = mutableListOf()) {
 
     override fun hashCode(): Int = children.hashCode()
 
-    fun clone(): Elements {
+    override fun clone(): Elements {
         val cloned = mutableListOf<Element>()
         for (e in children) {
             cloned.add(e.clone())
