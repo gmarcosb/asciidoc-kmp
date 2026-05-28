@@ -23,6 +23,6 @@ val ParagraphParser = (ParagraphElements * -EndOfLine.optional).map { tuple ->
     Paragraph(elements = els)
 }
 
-val NakedBlocks: Parser<Element> = BlockEmptyLine + SingleLineCommentParser + MultiLineCommentParser + QuoteBlockParser + SidebarBlockParser + ref { AdmonitionParagraphParser } + TableParser + SectionParser + UnorderedListItemParser + OrderedListItemParser + DelimitedBlockParser + ParagraphParser
+val NakedBlocks: Parser<Element> = BlockEmptyLine + TableParser + SectionParser + UnorderedListItemParser + OrderedListItemParser + DelimitedBlockParser + ParagraphParser
 
 val BlockElements: Parser<Element> = NakedBlocks

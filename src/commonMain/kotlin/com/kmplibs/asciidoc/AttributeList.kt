@@ -26,4 +26,17 @@ class AttributeList : ElementList {
         }
         return cloned
     }
+
+    fun getString(key: String): String? {
+        val attr = attributes.filterIsInstance<NamedAttribute>().find { it.name == key }
+        if (attr != null) {
+            val children = attr.value.children
+            return children.joinToString("") { it.toString() }
+        }
+        return null
+    }
+
+    fun positionalAttributes(): List<PositionalAttribute> {
+        return attributes.filterIsInstance<PositionalAttribute>()
+    }
 }
