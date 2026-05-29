@@ -1,3 +1,4 @@
 build/
 .gradle/
 xarpeg/
+src/commonTest/resources/asciidoctor/
