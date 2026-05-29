@@ -17,8 +17,8 @@ class RenderTest {
         assertTrue(parseResult.isSuccess, "Failed to parse document: ${parseResult.exceptionOrNull()}")
         val doc = parseResult.getOrThrow()
 
-        val renderer = Renderer()
-        val html = renderer.process(doc)
+        val renderer = HtmlRenderer()
+        val html = renderer.render(doc)
 
         assertTrue(html.contains("Document Title"), "HTML output did not contain section title")
         assertTrue(html.contains("This is a simple paragraph."), "HTML output did not contain the text")
